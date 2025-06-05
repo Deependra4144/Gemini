@@ -8,7 +8,7 @@ import history from '../assets/history.png'
 function Sidebar() {
     const [collaps, setCollaps] = useState(false)
     return (
-        <div className='bg-violet-100/80 h-full border-r border-violet-200 backdrop-blur-sm'>
+        <div className={`bg-violet-100/80 h-full border-r border-violet-200 backdrop-blur-sm transition-all duration-300 ${collaps ? 'w-56' : 'w-16'}`}>
             <div className='p-4 border-b border-violet-200'>
                 <button
                     onClick={() => { setCollaps(prev => !prev) }}
@@ -21,8 +21,8 @@ function Sidebar() {
             <div className='flex flex-col h-[calc(100%-4rem)] justify-between p-4'>
                 <div className='space-y-4'>
                     <button className='flex items-center gap-3 hover:bg-violet-200/50 p-2 rounded-lg transition-all duration-200 group w-full'>
-                        <img className='w-6 opacity-70 group-hover:opacity-100' src={plus} alt="New Chat" />
-                        <span className={`text-gray-700 whitespace-nowrap overflow-hidden transition-all duration-200 ${collaps ? 'w-auto opacity-100' : 'w-0 opacity-0'}`}>
+                        <img className='min-w-6 w-6 opacity-70 hover:opacity-100' src={plus} alt="New Chat" />
+                        <span className={`text-gray-700 truncate transition-all duration-200 ${collaps ? 'opacity-100' : 'opacity-0'}`}>
                             New Chat
                         </span>
                     </button>
@@ -36,22 +36,22 @@ function Sidebar() {
 
                 <div className='space-y-2'>
                     <button className='flex items-center gap-3 hover:bg-violet-200/50 p-2 rounded-lg transition-all duration-200 group w-full'>
-                        <img className='w-6 opacity-70 group-hover:opacity-100' src={question} alt="Help" />
-                        <span className={`text-gray-700 whitespace-nowrap overflow-hidden transition-all duration-200 ${collaps ? 'w-auto opacity-100' : 'w-0 opacity-0'}`}>
+                        <img className='min-w-6 w-6 opacity-70 hover:opacity-100' src={question} alt="Help" />
+                        <span className={`text-gray-700 truncate transition-all duration-200 ${collaps ? 'opacity-100' : 'opacity-0'}`}>
                             Help
                         </span>
                     </button>
 
                     <button className='flex items-center gap-3 hover:bg-violet-200/50 p-2 rounded-lg transition-all duration-200 group w-full'>
-                        <img className='w-6 opacity-70 group-hover:opacity-100' src={history} alt="Activity" />
-                        <span className={`text-gray-700 whitespace-nowrap overflow-hidden transition-all duration-200 ${collaps ? 'w-auto opacity-100' : 'w-0 opacity-0'}`}>
+                        <img className='min-w-6 w-6 opacity-70 hover:opacity-100' src={history} alt="Activity" />
+                        <span className={`text-gray-700 truncate transition-all duration-200 ${collaps ? 'opacity-100' : 'opacity-0'}`}>
                             Activity
                         </span>
                     </button>
 
                     <button className='flex items-center gap-3 hover:bg-violet-200/50 p-2 rounded-lg transition-all duration-200 group w-full'>
-                        <img className='w-6 opacity-70 group-hover:opacity-100' src={setting} alt="Settings" />
-                        <span className={`text-gray-700 whitespace-nowrap overflow-hidden transition-all duration-200 ${collaps ? 'w-auto opacity-100' : 'w-0 opacity-0'}`}>
+                        <img className='min-w-6 w-6 opacity-70 hover:opacity-100' src={setting} alt="Settings" />
+                        <span className={`text-gray-700 truncate transition-all duration-200 ${collaps ? 'opacity-100' : 'opacity-0'}`}>
                             Settings
                         </span>
                     </button>
